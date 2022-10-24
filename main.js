@@ -3,17 +3,17 @@ const fs = require("fs");
 class Contenedor {
     constructor(fileName) {
         this.filename = fileName;
-        this.crearArchivo();
+        //this.crearArchivo();
     }
 
-    async crearArchivo() {
-        fs.writeFile(this.filename, "[]", (error) => {
-            error
-                ?
-                console.log(error) :
-                console.log(`archivo ya creadon con el mismo nombre`);
-        });
-    }
+    /* async crearArchivo() {
+         fs.writeFile(this.filename, "[]", (error) => {
+             error
+                 ?
+                 console.log(error) :
+                 console.log(`archivo creado`);
+         });
+     }*/
 
     async getById(id) {
         try {
@@ -96,17 +96,17 @@ const main = async() => {
     const id2 = await contenedor.save({ title: "marcador", price: 400, url: "images.google.com" });
     const id3 = await contenedor.save({ title: "tijeras", price: 600, url: "images.google.com" });
 
-    console.log(id1, id2, id3);
+    //console.log(id1, id2, id3);
 
-    const object2 = await contenedor.getById(2);
-    console.log(object2);
-    const todoslosObjetos = await contenedor.getAll();
-    console.log(todoslosObjetos);
-    await contenedor.deleteById(2);
+    //const object2 = await contenedor.getById(2);
+    //console.log(object2);
+    //const todoslosObjetos = await contenedor.getAll();
+    //console.log(todoslosObjetos);
+    // await contenedor.deleteById(2);
 
-    const objetosEnElArchivo = await contenedor.getAll();
-    console.log(objetosEnElArchivo);
-    await contenedor.deleteAll();
+    //const objetosEnElArchivo = await contenedor.getAll();
+    //console.log(objetosEnElArchivo);
+    // await contenedor.deleteAll();
 }
-
-main();
+module.exports = Contenedor;
+//main();
