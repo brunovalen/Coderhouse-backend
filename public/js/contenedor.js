@@ -77,7 +77,7 @@ class Contenedor {
             );
             if (objectIdToBeUpdated) {
                 const index = parsedData.indexOf(objectIdToBeUpdated);
-                const { title, price, src } = newData;
+                const { title, price, src, email, mensaje } = newData;
 
                 parsedData[index]['title'] = title;
                 parsedData[index]['price'] = price;
